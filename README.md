@@ -1,3 +1,30 @@
+---
+license: cc-by-4.0
+task_categories:
+- text-to-audio
+- audio-classification
+- feature-extraction
+language:
+- en
+tags:
+- audio
+- music
+- sound
+- game-audio
+- electronic
+- dsp
+- pytorch
+- benchmark
+pretty_name: ComposerMind OpenAudio-48k
+size_categories:
+- n<1K
+configs:
+- config_name: default
+  data_files:
+  - split: train
+    path: metadata.csv
+---
+
 # ComposerMind OpenAudio-48k: High-Fidelity Audio Dataset for Machine Learning Research
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
