@@ -34,21 +34,39 @@ configs:
 [![Publisher](https://img.shields.io/badge/Publisher-ComposerMind%20Labs-purple.svg)]()
 
 ## Overview
-**ComposerMind OpenAudio-48k** is an open-access, studio-grade audio benchmark corpus created and curated by **Boobalan Arjunan** and published by **ComposerMind Labs**. The dataset comprises **94 strictly unique, uncompressed studio-rendered WAV tracks** spanning high-energy electronic music, drum & bass breaks, and dynamic game exploration cues.
+**ComposerMind OpenAudio-48k** is a research-oriented collection of **94 synthetically produced, high-energy electronic music tracks**, designed around fast-paced world exploration, interactive gaming, action sequences, and immersive electronic soundscapes.
 
-Engineered specifically as an all-purpose training and evaluation benchmark for machine learning, deep learning, and audio AI researchers, every track delivers pristine **48,000 Hz, 24-bit linear PCM stereo audio (`pcm_s24le`)** with **zero digital clipping**.
+Each track is accompanied by rich acoustic annotations generated using **BeatMind AI** (ComposerMind's proprietary acoustic analysis model and analysis pipeline), including tempo (BPM), musical key and Camelot harmonic notation, harmonic/percussive energy characteristics, and audio dynamics.
 
-Every track is accompanied by rich acoustic ground-truth labels extracted via **BeatMind AI / TempoMind** (BPM, musical scale/key, Camelot code, harmonic/percussive ratio, dynamic range) and a **turnkey natural language prompt** for immediate use in Text-to-Audio generative models (such as MusicGen, AudioCraft, Stable Audio Open, and MusicLM).
+The dataset also provides a natural-language prompt for each track, intended to support text-to-audio generation, music captioning, semantic retrieval, and audio–text representation learning.
 
 > **Acoustic Production Provenance:**  
 > ComposerMind OpenAudio-48k is a **Studio-Grade, In-The-Box (ITB) Electronic Music Corpus**. Tracks are composed and digitally synthesized using professional studio sound generators, sequencers, and synthesizers inside a digital audio workstation (DAW). Every track was mastered and audited through **WaveWash DSP** to ensure zero digital overs ($0\text{ dBFS}$ clamping), balanced dynamic crest factor ($15.1\text{ dB}$ avg), and uniform 48kHz/24-bit headroom.
 
 ---
 
+### Research Objectives
+The dataset is designed to support:
+* **Music Information Retrieval (MIR):** tempo estimation, key detection, harmonic analysis, rhythmic characterization, and audio feature extraction.
+* **Generative Music AI:** prompt-conditioned generation experiments using compatible models and frameworks such as MusicGen, AudioCraft, and Stable Audio Open.
+* **Audio–Text Representation Learning:** matching music recordings with natural-language descriptions for retrieval and embedding research.
+* **Game Audio Research:** exploration of energetic electronic music suitable for interactive worlds, action environments, and gameplay experiences.
+* **Dataset Quality and Benchmarking:** reproducible testing of audio analysis pipelines, metadata consistency, and acoustic feature estimation.
+
+### Intended Users
+The collection is intended for academic researchers, AI/ML engineers, music information retrieval specialists, game-audio developers, generative music researchers, sound designers, students, and music technology companies.
+
+### Annotation Methodology
+Acoustic annotations are produced using ComposerMind's proprietary **BeatMind AI** analysis workflow. The supplied annotations are **automatically extracted labels** and provide a standardized baseline for benchmark evaluation.
+
+Natural-language prompts are provided as conditioning and descriptive metadata for Text-to-Audio generative models (such as MusicGen, AudioCraft, Stable Audio Open, and MusicLM).
+
+---
+
 ## Technical Specifications
 * **Dataset Name**: ComposerMind OpenAudio-48k
 * **Creator & Author**: Boobalan Arjunan
-* **Record Label & Publisher**: ComposerMind Labs
+* **Publisher**: ComposerMind Labs
 * **Copyright**: Copyright © 2024 Boobalan Arjunan
 * **License**: Creative Commons Attribution 4.0 International (CC BY 4.0)
 * **Total Unique Tracks**: 94 tracks (`OpenAudio48k_Track01.wav` through `OpenAudio48k_Track94.wav`)
@@ -62,42 +80,17 @@ Every track is accompanied by rich acoustic ground-truth labels extracted via **
   * Digital Overs / Clipping: 0 / 94 files (clean headroom preserved)
   * Average Dynamic Range (Crest Factor): 15.10 dB (Range: 11.33 dB – 17.90 dB)
   * Average RMS Energy: -17.09 dBFS (balanced commercial game-audio standard)
-* **Tempo & Scale Profile**:
+* **Tempo & Key Profile**:
   * BPM Range: 93.7 – 176.5 BPM (Average: 123.8 BPM)
-  * Key Distribution: Diverse coverage across minor and major keys (E Minor, D Minor, E Major, C Minor, D Major, G Minor, etc.) with exact Camelot codes (6A, 7A, 9A, 12B, etc.)
+  * Key Distribution: Diverse coverage across minor and major keys with exact Camelot codes (6A, 7A, 9A, 12B, etc.)
   * Timbre Breakdown: Average 80.1% Harmonic / 19.9% Percussive energy
 
 ---
 
-## Machine Learning Ground-Truth Labels & Applications
-Every track in `metadata.csv` provides multi-dimensional ground truth labels for 5 major machine learning training paradigms:
-
-| Machine Learning Task | Ground-Truth Column | Model Architecture Examples |
-| :--- | :--- | :--- |
-| **1. Text-to-Audio / Music Generation** | `text_prompt`, `tempo_bpm`, `musical_key` | MusicGen, AudioCraft, Stable Audio Open, MusicLM |
-| **2. Tempo & Beat Tracking Estimation** | `tempo_bpm`, `bpm_confidence` | BeatNet, TempoCNN, DeepRhythm |
-| **3. Musical Key & Scale Classification** | `musical_key`, `musical_scale`, `camelot_code` | 24-class KeyNet, MIR key estimation networks |
-| **4. Timbre & Texture Conditioning** | `harmonic_ratio`, `percussive_ratio` | Conditional diffusion models (controlling synth vs drum density) |
-| **5. Multi-Label Tagging & Contrastive Learning** | `primary_genre`, `sub_genre`, `mood_label` | CLAP (Audio-Language contrastive learning), AST, MusiCNN |
-
----
-
-## Sample Text Prompts for Generative AI (Text-to-Music)
-In `metadata.csv`, each audio track has a pre-formatted, detailed natural language training prompt:
-
-* **Track 01**:
-  > *"A high-energy, dynamic electronic game exploration soundtrack track at 157.9 BPM in G Minor (6A). Features driving rolling breakbeats, deep sub-bassline, atmospheric ambient synths, 60.2% harmonic textures, and crisp percussive transients suitable for interactive game audio."*
-* **Track 46**:
-  > *"A high-energy, dynamic electronic game exploration soundtrack track at 150.0 BPM in E Minor (9A). Features driving rolling breakbeats, deep sub-bassline, atmospheric ambient synths, 84.6% harmonic textures, and crisp percussive transients suitable for interactive game audio."*
-* **Track 94**:
-  > *"A high-energy, dynamic electronic game exploration soundtrack track at 115.4 BPM in D Minor (7A). Features driving rolling breakbeats, deep sub-bassline, atmospheric ambient synths, 82.5% harmonic textures, and crisp percussive transients suitable for interactive game audio."*
-
----
-
-## Repository & Dataset Structure
+## Dataset Structure
 ```
 ComposerMind-OpenAudio-48k/
-├── metadata.csv                 # Complete 94-track manifest (27 columns)
+├── metadata.csv                 # Complete 94-track manifest (23 columns)
 ├── dataset-metadata.json        # Kaggle 10.0 Usability dataset specification
 ├── starter_eda_pytorch.ipynb    # Ingestion-ready PyTorch Dataset/DataLoader starter
 ├── LICENSE                      # Creative Commons Attribution 4.0 International
@@ -108,35 +101,33 @@ ComposerMind-OpenAudio-48k/
     └── METADATA_REVIEW.md       # Audit history & verification log
 ```
 
-### Metadata Schema (`metadata.csv`)
-27 columns included in the CSV manifest:
-* `file_name`: Standardized filename (`OpenAudio48k_TrackXX.wav`)
-* `track_id`: Unique track identifier (`Track01` - `Track94`)
-* `title`: Track title (`ComposerMind OpenAudio-48k - Track XX`)
-* `artist`: Creator / Author (**Boobalan Arjunan**)
-* `record_label`: Releasing label (**ComposerMind Labs**)
-* `publisher`: Publishing entity (**ComposerMind Labs**)
-* `copyright`: `Copyright © 2024 Boobalan Arjunan`
-* `license`: `CC-BY-4.0`
-* `primary_genre`: `Electronic`
-* `sub_genre`: `Game Audio / Drum & Bass / Breakbeat`
-* `mood_label`: `Energetic / Dynamic Exploration`
-* `tempo_bpm`: Continuous float BPM detected via BeatMind AI
-* `bpm_confidence`: Neural tempo detection confidence percentage
-* `musical_key`: Detected musical key (e.g. `G Minor`, `E Minor`)
-* `musical_scale`: Scale mode (`Minor` / `Major`)
-* `camelot_code`: Camelot Wheel harmonic mixing code (`6A`, `9A`, etc.)
-* `harmonic_ratio`: Percentage of harmonic/tonal energy (0–100%)
-* `percussive_ratio`: Percentage of transient/percussive energy (0–100%)
-* `crest_factor_db`: Dynamic range (peak-to-RMS ratio in dB)
-* `groove_quantization`: Beat grid adherence score
-* `duration_seconds`: Precise duration in seconds
-* `sample_rate`: Sampling frequency (48,000 Hz)
-* `channels`: Channel layout (2 = Stereo)
-* `bit_depth`: Audio resolution (24 bits)
-* `peak_dbfs`: Maximum absolute peak level in dBFS
-* `rms_dbfs`: Root-mean-square energy level in dBFS
-* `text_prompt`: Turnkey natural language training caption for Text-to-Music models
+### Metadata Schema (`metadata.csv` — 23 Columns)
+The reviewed release manifest contains 23 high-relevance attributes:
+1. `file_name`: Standardized audio filename (`OpenAudio48k_TrackXX.wav`)
+2. `track_id`: Unique track identifier (`Track01` - `Track94`)
+3. `title`: Track title (`ComposerMind OpenAudio-48k - Track XX`)
+4. `artist`: Creator / Author (**Boobalan Arjunan**)
+5. `publisher`: Publishing entity (**ComposerMind Labs**)
+6. `copyright`: `Copyright © 2024 Boobalan Arjunan`
+7. `license`: `CC-BY-4.0`
+8. `primary_genre`: `Electronic`
+9. `sub_genre`: `Game Audio / Drum & Bass / Breakbeat`
+10. `mood_label`: `Energetic / Dynamic Exploration`
+11. `tempo_bpm`: Continuous tempo detected via BeatMind AI
+12. `musical_key`: Detected musical key (e.g. `G Minor`, `E Minor`)
+13. `camelot_code`: Camelot Wheel harmonic mixing code (`6A`, `9A`, etc.)
+14. `harmonic_ratio`: Percentage of harmonic/tonal energy (0–100%)
+15. `percussive_ratio`: Percentage of transient/percussive energy (0–100%)
+16. `crest_factor_db`: Dynamic range (peak-to-RMS ratio in dB)
+17. `duration_seconds`: Precise duration in seconds
+18. `sample_rate`: Sampling frequency (48,000 Hz)
+19. `channels`: Channel layout (2 = Stereo)
+20. `bit_depth`: Audio resolution (24 bits)
+21. `peak_dbfs`: Maximum absolute peak level in dBFS
+22. `rms_dbfs`: Root-mean-square energy level in dBFS
+23. `text_prompt`: Turnkey natural language training caption for Text-to-Music models
+
+*(Note: `record_label`, `musical_scale`, `bpm_confidence`, and `groove_quantization` were streamlined to remove redundancy and ensure maximum interpretability for research).*
 
 ---
 
@@ -166,12 +157,12 @@ print(f"Text Prompt: {sample_row['text_prompt']}")
 
 ---
 
-## Audio Download & Mirrors
+## Audio Download & Public Registries
 
 The uncompressed 3.75 GB 24-bit audio tracks are hosted on public open-access data registries:
 
+* **Hugging Face Hub:** [huggingface.co/datasets/boobalanit/ComposerMind-OpenAudio-48k](https://huggingface.co/datasets/boobalanit/ComposerMind-OpenAudio-48k)
 * **Kaggle Dataset:** [kaggle.com/datasets/boobalanarjunan/composermind-openaudio-48k](https://www.kaggle.com/datasets/boobalanarjunan/composermind-openaudio-48k)
-* **Hugging Face Hub:** [huggingface.co/datasets/ComposerMind/OpenAudio-48k](https://huggingface.co/datasets/ComposerMind/OpenAudio-48k)
 * **Zenodo DOI:** *Pending minting upon final deposit*
 
 ---
