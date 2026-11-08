@@ -1,21 +1,45 @@
 # ComposerMind OpenAudio-48k
 
-**Status: Pre-release — validation pending.**
+**Pre-release | Validation pending**
 
-A proposed collection of 94 original electronic and gaming-oriented music WAV tracks for audio machine learning and music information retrieval research.
+ComposerMind OpenAudio-48k is a collection of **94 reported synthetically created electronic music tracks**, focused on **fast-paced world-exploration and gaming-oriented electronic genres**. The recordings are intended for audio machine learning, music information retrieval, and game-audio research.
 
-- **Creator:** Boobalan Arjunan
-- **Publisher:** ComposerMind Labs
-- **Target sample rate:** 48,000 Hz (to be verified)
-- **License:** Pending rights verification; no redistribution license is granted yet.
+**Synthetic production** here refers to electronically produced music, such as synthesized instruments and programmed arrangements. It does **not** imply generative-AI production; the exact production methods will be documented after verification.
 
-## Release validation plan
+## Attribution
 
-1. Verify WAV count, names, sample rates, channels, bit depths and durations.
-2. Reconcile all files with metadata records; identify missing or duplicate entries.
-3. Validate and document BPM, key, genre and other annotations.
-4. Verify rights for all compositions, recordings and third-party samples.
-5. Publish reproducible validation results and a dataset card.
-6. Distribute validated audio through a dedicated dataset host.
+- **Created by:** Boobalan Arjunan
+- **Published by:** ComposerMind Labs
+- **Collection:** 94 tracks (reported; pending file audit)
+- **Target format:** 48 kHz WAV (pending verification)
+- **Metadata:** CSV and JSON metadata (pending schema and value audit)
+- **License:** Not yet finalized. No redistribution permission is granted by this repository until a license is published.
 
-Large audio assets should not be committed directly to this repository.
+## Intended research applications
+
+- Electronic and game-music genre tagging
+- Tempo, key, energy and structural analysis
+- Music information retrieval and audio representation learning
+- Metadata validation and audio quality benchmarking
+
+These are proposed uses, not benchmark results.
+
+## Validation
+
+Run the non-destructive audit on your local dataset folder:
+
+```bash
+python3 scripts/audit_dataset.py "/Users/mymac/Desktop/Dataset Contanier/ComposerMind_OpenAudio_48k"
+```
+
+The audit writes reports to a separate output directory by default and **never renames, edits, resamples, or deletes source audio**. Review `validation/VALIDATION_PLAN.md` before release.
+
+## Publication plan
+
+1. Reconcile the actual WAV inventory against metadata CSV/JSON.
+2. Verify file encoding, sample rates, channels, durations, duplicates and annotation consistency.
+3. Review composition, recording, performance and sample rights.
+4. Document generation/production methods, limitations and intended tasks.
+5. Publish a versioned dataset card and validated audio on an appropriate dataset platform.
+
+**Status:** This repository is documentation and tooling only. The 94 tracks are not yet validated or released here.
