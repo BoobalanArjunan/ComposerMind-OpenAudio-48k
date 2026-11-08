@@ -28,6 +28,8 @@ configs:
 # ComposerMind OpenAudio-48k: High-Fidelity Audio Dataset for Machine Learning Research
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-OpenAudio--48k-yellow.svg)](https://huggingface.co/datasets/boobalanit/ComposerMind-OpenAudio-48k)
+[![Kaggle Dataset](https://img.shields.io/badge/Kaggle-OpenAudio--48k-blue.svg)](https://www.kaggle.com/datasets/boobalanarjunan/composermind-openaudio-48k)
 [![Audio Format](https://img.shields.io/badge/Audio-48kHz%2024--bit%20PCM%20Stereo-blue.svg)]()
 [![Tracks](https://img.shields.io/badge/Tracks-94%20Unique%20Tracks-green.svg)]()
 [![Total Duration](https://img.shields.io/badge/Duration-3.88%20Hours-orange.svg)]()
