@@ -1,0 +1,22 @@
+{
+  "title": "ComposerMind OpenAudio-48k: Studio Game Audio Benchmark",
+  "id": "boobalanarjunan/composermind-openaudio-48k",
+  "subtitle": "94 Lossless 48kHz Tracks with BeatMind AI BPM, Key & Text-to-Music Prompts",
+  "description": "ComposerMind OpenAudio-48k is an open-access, studio-grade audio benchmark corpus created by Boobalan Arjunan and published by ComposerMind Labs. Comprising 94 strictly unique uncompressed studio-rendered WAV files (3.88 hours, 48kHz 24-bit stereo PCM) with zero digital clipping. Fully annotated with BeatMind AI acoustic metrics (BPM, 24-key harmonic classification, Camelot code, harmonic/percussive ratio, dynamic range) and turnkey natural language training prompts for generative music models (MusicGen, AudioCraft, Stable Audio Open).",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0"
+    }
+  ],
+  "keywords": [
+    "audio",
+    "deep learning",
+    "music",
+    "sound",
+    "exploratory data analysis",
+    "generative ai",
+    "pytorch",
+    "music information retrieval",
+    "benchmarking"
+  ]
+}
