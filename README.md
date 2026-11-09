@@ -28,8 +28,7 @@ configs:
 # ComposerMind OpenAudio-48k: High-Fidelity Audio Dataset for Machine Learning Research
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-OpenAudio--48k-yellow.svg)](https://huggingface.co/datasets/boobalanit/ComposerMind-OpenAudio-48k)
-[![Kaggle Dataset](https://img.shields.io/badge/Kaggle-OpenAudio--48k-blue.svg)](https://www.kaggle.com/datasets/boobalanarjunan/composermind-openaudio-48k)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24050283.svg)](https://doi.org/10.5281/zenodo.24050283)
 [![Audio Format](https://img.shields.io/badge/Audio-48kHz%2024--bit%20PCM%20Stereo-blue.svg)]()
 [![Tracks](https://img.shields.io/badge/Tracks-94%20Unique%20Tracks-green.svg)]()
 [![Total Duration](https://img.shields.io/badge/Duration-3.88%20Hours-orange.svg)]()
@@ -165,7 +164,7 @@ The uncompressed 3.75 GB 24-bit audio tracks are hosted on public open-access da
 
 * **Hugging Face Hub:** [huggingface.co/datasets/boobalanit/ComposerMind-OpenAudio-48k](https://huggingface.co/datasets/boobalanit/ComposerMind-OpenAudio-48k)
 * **Kaggle Dataset:** [kaggle.com/datasets/boobalanarjunan/composermind-openaudio-48k](https://www.kaggle.com/datasets/boobalanarjunan/composermind-openaudio-48k)
-* **Zenodo DOI:** *Pending minting upon final deposit*
+* **Zenodo DOI:** [doi.org/10.5281/zenodo.24050283](https://doi.org/10.5281/zenodo.24050283)
 
 ---
 
@@ -174,11 +173,13 @@ Published under the **Creative Commons Attribution 4.0 International (CC BY 4.0)
 
 ### BibTeX
 ```bibtex
-@dataset{arjunan2024composermindopenaudio,
-  title     = {ComposerMind OpenAudio-48k: A High-Fidelity Audio Dataset for Machine Learning Research},
+@dataset{arjunan2026composermind,
+  title     = {ComposerMind OpenAudio-48k: Studio Game Audio Benchmark & Generative Music Corpus},
   author    = {Arjunan, Boobalan},
   publisher = {ComposerMind Labs},
-  year      = {2024},
+  year      = {2026},
+  doi       = {10.5281/zenodo.24050283},
+  url       = {https://doi.org/10.5281/zenodo.24050283},
   license   = {Creative Commons Attribution 4.0 International (CC BY 4.0)}
 }
 ```
